@@ -1,0 +1,79 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model NewsWebApp.PL.Models.ViewPage
+
+@{
+    ViewBag.Title = "Index";
+
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    foreach (var item in Model.Headings)
+    {
+        listItems.Add(new SelectListItem
+        {
+            Text = item.Name,
+            Value = item.Id.ToString()
+        });
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>News Web App</title>
+</head>
+<body>
+    <h2 align="center">Home page</h2>
+    <h2 align="center">@Html.ActionLink("Autorisation", "Autorisation")</h2>
+
+    <div>
+        @using (Html.BeginForm("SearchName", "Home"))
+        {
+            @Html.HiddenFor(m => m.Headings);
+            @Html.TextBoxFor(m => m.Filter.Name, new { placeholder = "NewsName", @type = "name" })
+            <input type="submit" name="ByName" value="ByName" />
+        }
+    </div>
+    <div>
+        @using (Html.BeginForm("SearchTopyc", "Home"))
+        {
+            @Html.HiddenFor(m => m.Headings);
+            @Html.TextBoxFor(m => m.Filter.Topyc, new { placeholder = "Topyc", @type = "name" })
+            <input type="submit" name="ByTopic" value="ByTopic" />
+        }
+    </div>
+    <div>
+        @using (Html.BeginForm("SearchHeading", "Home"))
+        {
+            @Html.HiddenFor(m => m.Headings);
+            @Html.DropDownListFor(m => m.Filter.HeadingId, listItems, "-- Select Heading --")
+            <input type="submit" name="ByTopic" value="ByTopic" />
+        }
+    </div>
+
+
+
+    <table>
+        <tr>
+            <th>NewsName</th>
+            <th>Publish Date</th>
+        </tr>
+
+        @foreach (var item in Model.News)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.NewsName)</td>
+                <td>@Html.DisplayFor(model => item.PublishDate)</td>
+                <td>@Html.ActionLink("View", "ViewNews", item)</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model NewsWebApp.PL.Models.AutrorisationModel
+
+@{
+    ViewBag.Title = "Autorisation";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autorisation</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <th>Registration</th>
+
+            <th>Login</th>
+        </tr>
+
+        <tr>
+            <td>
+                @using (Html.BeginForm("Register", "Autorisation"))
+                {
+                    @Html.TextBoxFor(model => model.RegistrationModel.Username, new { placeholder = "Username", @type = "name" })<br>
+                    @Html.TextBoxFor(model => model.RegistrationModel.Email, new { placeholder = "E-mail", @type = "email" })<br>
+                    @Html.TextBoxFor(model => model.RegistrationModel.Firstname, new { placeholder = "Firstname", @type = "name" })<br>
+                    @Html.TextBoxFor(model => model.RegistrationModel.Lastname, new { placeholder = "Lastname", @type = "" })<br>
+                    @Html.TextBoxFor(model => model.RegistrationModel.Mobile, new { placeholder = "Mobile" })<br>
+                    @Html.TextBoxFor(model => model.RegistrationModel.Password1, new { placeholder = "Password", @type = "password" })<br>
+                    @Html.TextBoxFor(model => model.RegistrationModel.Password2, new { placeholder = "Password repeat", @type = "password" })<br>
+                    <input type="submit" name="reg" value="Register" />
+                }
+            </td>
+
+            <td>
+                @using (Html.BeginForm("Login", "Autorisation"))
+                {
+                    @Html.TextBoxFor(model => model.LoginModel.Username, new { placeholder = "Username", @type = "name" })<br>
+                    @Html.TextBoxFor(model => model.LoginModel.Password, new { placeholder = "Password", @type = "password" })<br>
+                    <input type="submit" name="login" value="LogIn" />
+                }
+            </td>
+        </tr>
+    </table>
+
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Result))
+    {
+        <h3 align="center">@ViewBag.Result</h3>
+    }
+</body>
+</html>

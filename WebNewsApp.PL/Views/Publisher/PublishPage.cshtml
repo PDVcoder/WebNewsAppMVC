@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model NewsWebApp.PL.Models.PublishViewModel;
+
+@{
+    ViewBag.Title = "Publisher";
+
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    foreach (var item in Model.HeadingListModel)
+    {
+        listItems.Add(new SelectListItem
+        {
+            Text = item.Name,
+            Value = item.Id.ToString()
+        });
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Publisher</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Publisher</h1>
+    <h2>Author name @Html.DisplayFor(model => model.AuthorModel.Firstname)   @Html.DisplayFor(model => model.AuthorModel.Lastname) </h2>
+
+    <div>
+
+        @using (Html.BeginForm("PublishNews", "Publisher"))
+        {
+            @Html.HiddenFor(model => model.AuthorModel.Id)
+            @Html.TextBoxFor(model => model.NewsModel.NewsName, new { placeholder = "NewsName", @type = "name" })<br>
+            @Html.TextBoxFor(model => model.NewsModel.Topyc, new { placeholder = "Topics", @type = "name" })<br>
+
+            @Html.DropDownListFor(model => model.NewsModel.HeadingId, listItems, "-- Select Heading --")<br>
+            @Html.TextAreaFor(model => model.NewsModel.NewsText, new { placeholder = "Text", @type = "text"})<br>
+
+            <input type="submit" name="publish" value="Publish" />
+        }
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Result))
+    {
+        <h3 align="center">@ViewBag.Result</h3>
+    }
+</body>
+</html>

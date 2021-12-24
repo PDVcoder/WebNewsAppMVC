@@ -1,0 +1,12 @@
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\bin\Debug\netcoreapp3.1\NewsWebApp.DAL.deps.json
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\bin\Debug\netcoreapp3.1\NewsWebApp.DAL.runtimeconfig.json
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\bin\Debug\netcoreapp3.1\NewsWebApp.DAL.runtimeconfig.dev.json
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\bin\Debug\netcoreapp3.1\NewsWebApp.DAL.dll
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\bin\Debug\netcoreapp3.1\NewsWebApp.DAL.pdb
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.csprojAssemblyReference.cache
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.AssemblyInfoInputs.cache
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.AssemblyInfo.cs
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.csproj.CoreCompileInputs.cache
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.dll
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.pdb
+E:\KPI\Semestr_5\.NET\NewsWebApp\NewsWebApp.DAL\obj\Debug\netcoreapp3.1\NewsWebApp.DAL.genruntimeconfig.cache
